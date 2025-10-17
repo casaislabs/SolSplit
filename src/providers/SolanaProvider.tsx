@@ -1,4 +1,5 @@
-import { FC, ReactNode, useMemo } from 'react'
+import type { FC, ReactNode } from 'react'
+import { useMemo } from 'react'
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react'
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
