@@ -15,6 +15,7 @@ import { useAltLifecycle } from '@/hooks/useAltLifecycle'
 import { AmountInput } from '@/components/transfer-form/AmountInput'
 import { RecipientsSection } from '@/components/transfer-form/RecipientsSection'
 import { AltClosePanel } from '@/components/transfer-form/AltClosePanel'
+const faucetUrl = 'https://faucet.solana.com/'
 
 export function TransferForm({ className }: { className?: string }) {
   const { connection } = useConnection()
@@ -369,6 +370,15 @@ export function TransferForm({ className }: { className?: string }) {
         <div className="flex items-center gap-2">
           <Badge variant="secondary">Devnet</Badge>
           <span className="text-xs text-muted-foreground">Use for testing only</span>
+          <a
+            href={faucetUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Request Devnet SOL from Solana Faucet"
+            className="text-xs text-muted-foreground underline decoration-dashed hover:text-foreground"
+          >
+            Request Devnet SOL
+          </a>
         </div>
       </div>
 

@@ -5,6 +5,8 @@ import { SiteHeader } from '@/components/SiteHeader'
 import { ConnectWalletButton } from './components/ConnectWalletButton'
 import TransferForm from '@/components/TransferForm'
 
+const faucetUrl = 'https://faucet.solana.com/'
+
 export default function App() {
   const { connected } = useWallet()
   // Connection/disconnection toasts are displayed from WalletToasts
@@ -22,6 +24,17 @@ export default function App() {
                 <CardTitle className="text-base text-brand-gradient">Connect your wallet to get started</CardTitle>
                 <CardDescription>
                   Use Phantom, Solflare, or Ledger to authenticate and continue. Your actions run on Devnet.
+                  <span className="ml-1">
+                    <a
+                      href={faucetUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Request Devnet SOL from Solana Faucet"
+                      className="underline decoration-dashed text-muted-foreground hover:text-foreground"
+                    >
+                      Request Devnet SOL here
+                    </a>
+                  </span>
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -40,7 +53,7 @@ export default function App() {
       )}
 
       {connected && (
-        <main className="mx-auto max-w-7xl px-4 pb-12 grid min-h-[calc(100vh-140px)] place-items-center">
+        <main className="mx-auto max-w-7xl px-4 pt-6 pb-12 grid min-h-[calc(100vh-140px)] place-items-center">
           <div className="mx-auto w-full max-w-2xl">
             <TransferForm />
           </div>
